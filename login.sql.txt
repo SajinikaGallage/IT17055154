@@ -1,0 +1,56 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.9
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: May 25, 2019 at 04:43 PM
+-- Server version: 5.7.21
+-- PHP Version: 5.6.35
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `login`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `registration`
+--
+
+DROP TABLE IF EXISTS `registration`;
+CREATE TABLE IF NOT EXISTS `registration` (
+  `userID` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `role` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `addedDate` date DEFAULT NULL,
+  `status` varchar(100) NOT NULL DEFAULT 'active',
+  PRIMARY KEY (`userID`)
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `registration`
+--
+
+INSERT INTO `registration` (`userID`, `email`, `username`, `role`, `password`, `addedDate`, `status`) VALUES
+(22, 'naumi@gmail.com', 'na', 'admin', '12345', '2019-05-22', 'inactive'),
+(2, 'sahan@gmail.com', 'sahan123', 'User', '12345', '2019-05-22', 'inactive'),
+(23, 'ann@gmail.com', 'ann', 'user', '123', '2019-05-22', 'active'),
+(21, 'lowi@gmail.com', 'lowi', 'user', '123', '2019-05-22', 'active');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
